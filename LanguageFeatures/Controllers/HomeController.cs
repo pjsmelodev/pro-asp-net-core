@@ -28,7 +28,8 @@ namespace LanguageFeatures.Controllers
             //}
             //return View(new string[] { "No value" });
 
-            return View(new string[] { products[0]?.Name ?? "No value" });
+            //return View(new string[] { products[0]?.Name ?? "No value" });
+            return View(new string[] { products[0]!.Name });
         }
     }
 }
