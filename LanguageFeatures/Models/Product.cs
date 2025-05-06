@@ -3,11 +3,11 @@
     public class Product
     {
 
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         public decimal? Price { get; set; }
 
-        public static Product[] GetProducts()
+        public static Product?[] GetProducts()
         {
             Product kayak = new Product()
             {
@@ -21,7 +21,7 @@
                 Price = 48.95M
             };
 
-            return new Product[] { kayak, lifejack, null };
+            return new Product?[] { kayak, lifejack, null };
         }
     }
 }
