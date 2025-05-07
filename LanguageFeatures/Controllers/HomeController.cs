@@ -29,7 +29,10 @@ namespace LanguageFeatures.Controllers
             //return View(new string[] { "No value" });
 
             //return View(new string[] { products[0]?.Name ?? "No value" });
-            return View(new string[] { products[0]!.Name });
+            return View(new string[]
+            {
+                $"Name: {products[0]?.Name}, Price: {products[0]?.Price}"
+            });
         }
     }
 }
