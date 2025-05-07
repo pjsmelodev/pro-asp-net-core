@@ -106,9 +106,17 @@ namespace LanguageFeatures.Controllers
             };
 
             // só os products com preço >= 20 é que são passados para o método de soma
-            decimal arrayTotal = productArray.FilterByPrice(20).TotalPrices();
+            //decimal arrayTotal = productArray.FilterByPrice(20).TotalPrices();
 
-            return View("Index", new string[] { $"Array Total: {arrayTotal}" });
+            //return View("Index", new string[] { $"Array Total: {arrayTotal}" });
+
+            decimal priceFilterTotal = productArray.FilterByPrice(20).TotalPrices();
+            decimal nameFilterTotal = productArray.FilterByName('S').TotalPrices();
+
+            return View("Index", new string[] {
+                $"Price Total: {priceFilterTotal:C2}",
+                $"Name Total: {nameFilterTotal:C2}"
+            });
         }
     }
 }
