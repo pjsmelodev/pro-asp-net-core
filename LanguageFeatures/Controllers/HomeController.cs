@@ -5,6 +5,11 @@ namespace LanguageFeatures.Controllers
 {
     public class HomeController : Controller
     {
+        bool FilterByPrice(Product? p)
+        {
+            return (p?.Price ?? 0) >= 20;
+        }
+
         public ViewResult Index()
         {
             //Product?[] products = Product.GetProducts();
@@ -105,13 +110,21 @@ namespace LanguageFeatures.Controllers
                 new Product {Name = "Corner flag", Price = 34.95M}
             };
 
+            Func<Product?, bool> nameFilter = delegate (Product? prod)
+            {
+                return prod?.Name[0] == 'S';
+            };
+
             // só os products com preço >= 20 é que são passados para o método de soma
             //decimal arrayTotal = productArray.FilterByPrice(20).TotalPrices();
 
             //return View("Index", new string[] { $"Array Total: {arrayTotal}" });
 
-            decimal priceFilterTotal = productArray.FilterByPrice(20).TotalPrices();
-            decimal nameFilterTotal = productArray.FilterByName('S').TotalPrices();
+            //decimal priceFilterTotal = productArray.FilterByPrice(20).TotalPrices();
+            //decimal nameFilterTotal = productArray.FilterByName('S').TotalPrices();
+
+            decimal priceFilterTotal = productArray.Filter(FilterByPrice).TotalPrices();
+            decimal nameFilterTotal = productArray.Filter(nameFilter).TotalPrices();
 
             return View("Index", new string[] {
                 $"Price Total: {priceFilterTotal:C2}",
