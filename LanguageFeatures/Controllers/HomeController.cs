@@ -57,31 +57,36 @@ namespace LanguageFeatures.Controllers
 
             //return View("Index", products.Keys);
 
-            object[] data = new object[] { 275M, 29.95M, "apple", "orange", 100, 10 };
-            decimal total = 0;
-            for (int i = 0; i < data.Length; i++)
-            {
-                //if (data[i] is decimal d)
-                //{
-                //    total += d;
-                //}
+            //object[] data = new object[] { 275M, 29.95M, "apple", "orange", 100, 10 };
+            //decimal total = 0;
+            //for (int i = 0; i < data.Length; i++)
+            //{
+            //    //if (data[i] is decimal d)
+            //    //{
+            //    //    total += d;
+            //    //}
 
-                switch (data[i])
-                {
-                    case decimal decimalValue:
-                        //case decimal decimalValueMoreThan50 when decimalValueMoreThan50 > 50:
-                        total += decimalValue;
-                        //total += decimalValueMoreThan50;
-                        break;
-                    case int intValue:
-                        //case int intValueMoreThan10 when intValueMoreThan10 > 10:
-                        total += intValue;
-                        //total += intValueMoreThan10;
-                        break;
-                }
-            }
+            //    switch (data[i])
+            //    {
+            //        case decimal decimalValue:
+            //            //case decimal decimalValueMoreThan50 when decimalValueMoreThan50 > 50:
+            //            total += decimalValue;
+            //            //total += decimalValueMoreThan50;
+            //            break;
+            //        case int intValue:
+            //            //case int intValueMoreThan10 when intValueMoreThan10 > 10:
+            //            total += intValue;
+            //            //total += intValueMoreThan10;
+            //            break;
+            //    }
+            //}
 
-            return View("Index", new string[] { $"Total: {total:C2}" });
+            //return View("Index", new string[] { $"Total: {total:C2}" });
+
+            // Aplicação do extension method
+            ShoppingCart cart = new ShoppingCart { Products = Product.GetProducts() };
+            decimal cartTotal = cart.TotalPrices();
+            return View("Index", new string[] { $"Total: {cartTotal:C2}" });
         }
     }
 }
