@@ -61,9 +61,23 @@ namespace LanguageFeatures.Controllers
             decimal total = 0;
             for (int i = 0; i < data.Length; i++)
             {
-                if (data[i] is decimal d)
+                //if (data[i] is decimal d)
+                //{
+                //    total += d;
+                //}
+
+                switch (data[i])
                 {
-                    total += d;
+                    case decimal decimalValue:
+                        //case decimal decimalValueMoreThan50 when decimalValueMoreThan50 > 50:
+                        total += decimalValue;
+                        //total += decimalValueMoreThan50;
+                        break;
+                    case int intValue:
+                        //case int intValueMoreThan10 when intValueMoreThan10 > 10:
+                        total += intValue;
+                        //total += intValueMoreThan10;
+                        break;
                 }
             }
 
