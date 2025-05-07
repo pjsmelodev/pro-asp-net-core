@@ -42,7 +42,8 @@ namespace LanguageFeatures.Controllers
 
             //return View("Index", new string[] { "Bob", "Joe", "Alice" });
 
-            Dictionary<string, Product> products = new Dictionary<string, Product>
+            //Dictionary<string, Product> products = new Dictionary<string, Product>
+            Dictionary<string, Product> products = new()
             {
                 //{ "Kayak", new Product
                 //    { Name = "Kayak", Price = 275M }
