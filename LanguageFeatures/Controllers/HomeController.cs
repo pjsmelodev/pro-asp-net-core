@@ -44,12 +44,14 @@ namespace LanguageFeatures.Controllers
 
             Dictionary<string, Product> products = new Dictionary<string, Product>
             {
-                { "Kayak", new Product
-                    { Name = "Kayak", Price = 275M }
-                },
-                { "Lifejack", new Product
-                { Name = "Lifejack", Price = 48.95M }
-                }
+                //{ "Kayak", new Product
+                //    { Name = "Kayak", Price = 275M }
+                //},
+                //{ "Lifejack", new Product
+                //{ Name = "Lifejack", Price = 48.95M }
+                //}
+                ["Kayak"] = new Product { Name = "Kayak", Price = 275M },
+                ["Lifejack"] = new Product { Name = "Lifejack", Price = 48.95M }
             };
 
             return View("Index", products.Keys);
