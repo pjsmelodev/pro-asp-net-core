@@ -3,6 +3,7 @@
     public static class MyExtensionMethods
     {
         // this -> faz com que TotalPrices seja um extension method
+        // O primeiro parâmetro é o tipo que queremos extender
         public static decimal TotalPrices(this ShoppingCart cartParam)
         {
             decimal total = 0;
