@@ -86,16 +86,29 @@ namespace LanguageFeatures.Controllers
             // Aplicação do extension method
             ShoppingCart cart = new ShoppingCart { Products = Product.GetProducts() };
 
+            //Product[] productArray =
+            //{
+            //    new Product { Name = "Kayak", Price = 275M },
+            //    new Product { Name = "Lifejack", Price = 48.95M }
+            //};
+
+            //decimal cartTotal = cart.TotalPrices();
+            //decimal arrayTotal = productArray.TotalPrices();
+
+            //return View("Index", new string[] { $"Cart Total: {cartTotal:C2}", $"Array Total: {arrayTotal:C2}" });
+
             Product[] productArray =
             {
-                new Product { Name = "Kayak", Price = 275M },
-                new Product { Name = "Lifejack", Price = 48.95M }
+                new Product {Name = "Kayak", Price = 275M},
+                new Product {Name = "Lifejack", Price = 48.95M},
+                new Product {Name = "Soccer ball", Price = 19.50M},
+                new Product {Name = "Corner flag", Price = 34.95M}
             };
 
-            decimal cartTotal = cart.TotalPrices();
-            decimal arrayTotal = productArray.TotalPrices();
+            // só os products com preço >= 20 é que são passados para o método de soma
+            decimal arrayTotal = productArray.FilterByPrice(20).TotalPrices();
 
-            return View("Index", new string[] { $"Cart Total: {cartTotal:C2}", $"Array Total: {arrayTotal:C2}" });
+            return View("Index", new string[] { $"Array Total: {arrayTotal}" });
         }
     }
 }
