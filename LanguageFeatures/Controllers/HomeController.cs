@@ -40,7 +40,19 @@ namespace LanguageFeatures.Controllers
             //names[2] = "Alice";
             //return View("Index", names);
 
-            return View("Index", new string[] { "Bob", "Joe", "Alice" });
+            //return View("Index", new string[] { "Bob", "Joe", "Alice" });
+
+            Dictionary<string, Product> products = new Dictionary<string, Product>
+            {
+                { "Kayak", new Product
+                    { Name = "Kayak", Price = 275M }
+                },
+                { "Lifejack", new Product
+                { Name = "Lifejack", Price = 48.95M }
+                }
+            };
+
+            return View("Index", products.Keys);
         }
     }
 }
