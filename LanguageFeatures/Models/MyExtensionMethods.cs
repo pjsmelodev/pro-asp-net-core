@@ -4,15 +4,22 @@
     {
         // this -> faz com que TotalPrices seja um extension method
         // O primeiro parâmetro é o tipo que queremos extender
-        public static decimal TotalPrices(this ShoppingCart cartParam)
+        //public static decimal TotalPrices(this ShoppingCart cartParam)
+
+        public static decimal TotalPrices(this IEnumerable<Product?> products)
         {
             decimal total = 0;
-            if (cartParam.Products != null)
+            //if (cartParam.Products != null)
+            //{
+            //    foreach (Product? prod in cartParam.Products)
+            //    {
+            //        total += prod?.Price ?? 0;
+            //    }
+            //}
+
+            foreach (Product? prod in products)
             {
-                foreach (Product? prod in cartParam.Products)
-                {
-                    total += prod?.Price ?? 0;
-                }
+                total += prod?.Price ?? 0;
             }
             return total;
         }
