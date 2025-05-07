@@ -23,5 +23,16 @@
             }
             return total;
         }
+
+        public static IEnumerable<Product?> FilterByPrice(this IEnumerable<Product?> producEnum, decimal minimumPrice)
+        {
+            foreach (Product? prod in producEnum)
+            {
+                if ((prod?.Price ?? 0) >= minimumPrice)
+                {
+                    yield return prod;
+                }
+            }
+        }
     }
 }
