@@ -7,7 +7,7 @@ namespace LanguageFeatures.Controllers
     {
         public ViewResult Index()
         {
-            Product?[] products = Product.GetProducts();
+            //Product?[] products = Product.GetProducts();
 
             //Product? p = products[0];
             //string val;
@@ -29,10 +29,18 @@ namespace LanguageFeatures.Controllers
             //return View(new string[] { "No value" });
 
             //return View(new string[] { products[0]?.Name ?? "No value" });
-            return View(new string[]
-            {
-                $"Name: {products[0]?.Name}, Price: {products[0]?.Price}"
-            });
+            //return View(new string[]
+            //{
+            //    $"Name: {products[0]?.Name}, Price: {products[0]?.Price}"
+            //});
+
+            //string[] names = new string[3];
+            //names[0] = "Bob";
+            //names[1] = "Joe";
+            //names[2] = "Alice";
+            //return View("Index", names);
+
+            return View("Index", new string[] { "Bob", "Joe", "Alice" });
         }
     }
 }
