@@ -31,11 +31,11 @@ namespace LanguageFeatures.Models
             GetPageLengths(List<string> output, params string[] urls)
         {
             List<long?> results = new List<long?>();
-            HttpClient cleint = new HttpClient();
+            HttpClient client = new HttpClient();
             foreach (string url in urls)
             {
                 output.Add($"Started request for {url}");
-                var httpMessage = await cleint.GetAsync($"http://{url}");
+                var httpMessage = await client.GetAsync($"http://{url}");
                 results.Add(httpMessage.Content.Headers.ContentLength);
                 output.Add($"Completed request for {url}");
             }
