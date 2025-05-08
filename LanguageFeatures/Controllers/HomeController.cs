@@ -2,22 +2,14 @@
 {
     public class HomeController : Controller
     {
-        //public ViewResult Index()
-        //{
-        //    IProductSelection cart = new ShoppingCart(
-        //    new Product { Name = "Kayak", Price = 275M },
-        //    new Product { Name = "Lifejacket", Price = 48.95M },
-        //    new Product { Name = "Soccer ball", Price = 19.50M },
-        //    new Product { Name = "Corner flag", Price = 34.95M }
-        //    );
-        //    //return View(cart.Products?.Select(p => p.Name));
-        //    return View(cart.Names);
-        //}
-
         public async Task<ViewResult> Index()
         {
-            long? length = await MyAsynchMethods.GetPageLength();
-            return View(new string[] { $"Length: {length}" });
+            List<string> output = new List<string>();
+            foreach (long? len in await MyAsynchMethods.GetPageLengths(output, "apress.com", "microsoft.com", "amazon.com"))
+            {
+                output.Add($"Page length: {len}");
+            }
+            return View(output);
         }
     }
 }
