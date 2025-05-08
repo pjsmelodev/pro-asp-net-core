@@ -25,6 +25,7 @@
             };
 
             return View(products.Select(p => p.Name));
+            //return View(products.Select(p => p.GetType().Name));
         }
     }
 }
