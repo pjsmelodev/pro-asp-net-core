@@ -12,6 +12,7 @@
 
         public ViewResult Index()
         {
+            // var permite instanciar variáveis locais e inferir o seu tipo
             var names = new[] { "Kayak", "Lifejacket", "Soccer ball" };
             return View(names);
         }
