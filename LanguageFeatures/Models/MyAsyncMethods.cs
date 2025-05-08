@@ -23,6 +23,7 @@ namespace LanguageFeatures.Models
             HttpClient client = new HttpClient();
             var httpMessage = await client.GetAsync("http://apress.com");
             return httpMessage.Content.Headers.ContentLength;
+            // já não precisa de dois returns
         }
     }
 }
