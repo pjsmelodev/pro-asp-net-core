@@ -1,18 +1,16 @@
-﻿using LanguageFeatures.Models;
-
-namespace LanguageFeatures.Controllers
+﻿namespace LanguageFeatures.Controllers
 {
- public class HomeController : Controller
-{
-    public async Task<ViewResult> Index()
+    public class HomeController : Controller
     {
-        List<string> output = new List<string>();
-        await foreach (long? len in MyAsyncMethods.GetPageLengths(output,
-        "apress.com", "microsoft.com", "amazon.com"))
+        public async Task<ViewResult> Index()
         {
-            output.Add($"Page length: {len}");
+            List<string> output = new List<string>();
+            foreach (long? len in await MyAsyncMethods.GetPageLengths(output,
+            "apress.com", "microsoft.com", "amazon.com"))
+            {
+                output.Add($"Page length: {len}");
+            }
+            return View(output);
         }
-        return View(output);
     }
-}
 }
