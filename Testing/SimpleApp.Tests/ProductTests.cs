@@ -31,4 +31,7 @@ namespace SimpleApp.Tests
             Assert.Equal(100M, p.Price);
         }
     }
+
+    // o nome do teste deve descrever o que ele faz
+    // o nome da classe deve descrever o que ela testa especificamente
 }
