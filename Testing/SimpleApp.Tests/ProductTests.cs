@@ -18,16 +18,20 @@ namespace SimpleApp.Tests
             Assert.Equal("New Name", p.Name);
         }
 
+        // [Fact] indica que se trata de um teste
         [Fact]
         public void CanChangeProductPrice()
         {
             // Arrange
+            // Arrange refers to setting up the conditions for the test
             var p = new Product { Name = "Test", Price = 100M };
 
             // Act
+            // Act refers to performing the test
             p.Price = 200M;
 
             // Assert
+            // Assert refers to verifying that the result was the expected one
             Assert.Equal(100M, p.Price);
         }
     }
