@@ -2,16 +2,16 @@
 {
     public class HomeController : Controller
     {
-        public async Task<ViewResult> Index()
+        public ViewResult Index()
         {
-            List<string> output = new List<string>();
-            //foreach (long? len in await MyAsyncMethods.GetPageLengths(output,
-            //"apress.com", "microsoft.com", "amazon.com"))
-            await foreach (long? len in MyAsyncMethods.GetPageLengths(output, "apress.com", "microsoft.com", "amazon.com"))
+            var products = new[]
             {
-                output.Add($"Page length: {len}");
-            }
-            return View(output);
+                new { Name = "Kayak", Price = 275M},
+                new { Name = "Lifejacket", Price = 48.95M},
+                new { Name = "Soccer ball", Price = 19.50M},
+                new { Name = "Corner flag", Price = 39.95M}
+            };
+            return View(products.Select(p => $"Name: {p.Name}, Price: {p.Price:C}"));
         }
     }
 }
