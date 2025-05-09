@@ -18,6 +18,7 @@ namespace SimpleApp.Tests
             Assert.Equal("New Name", p.Name);
         }
 
+        [Fact]
         public void CanChangeProductPrice()
         {
             // Arrange
