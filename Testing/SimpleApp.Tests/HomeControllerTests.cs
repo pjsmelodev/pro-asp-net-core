@@ -26,3 +26,7 @@ namespace SimpleApp.Tests
         }
     }
 }
+
+// Arrange serve para instanciar o que for necessário para os testes
+// Act serve para chamar os métodos que vão ser alvo de teste
+// Assert serve para usar as instâncias e os métodos para fazer os testes propriamente ditos
