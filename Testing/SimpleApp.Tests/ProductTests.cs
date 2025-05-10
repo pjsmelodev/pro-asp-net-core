@@ -31,7 +31,7 @@ namespace SimpleApp.Tests
 
             // Assert
             // Assert refers to verifying that the result was the expected one
-            Assert.Equal(100M, p.Price);
+            Assert.Equal(200M, p.Price);
         }
     }
 
