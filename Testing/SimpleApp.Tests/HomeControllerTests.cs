@@ -14,7 +14,7 @@ namespace SimpleApp.Tests
             var controller = new HomeController();
             Product[] products = new Product[] {
                 new Product { Name = "Kayak", Price = 275M },
-                new Product { Name = "Lifejacket", Price = 48.95M}
+                new Product { Name = "Lifejacket", Price = 48.95M }
             };
             // Act
             var model = (controller.Index() as ViewResult)?.ViewData.Model
