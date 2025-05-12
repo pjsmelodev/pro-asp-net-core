@@ -48,3 +48,5 @@ namespace SimpleApp.Tests
 // Arrange serve para instanciar o que for necessário para os testes
 // Act serve para chamar os métodos que vão ser alvo de teste
 // Assert serve para usar as instâncias e os métodos para fazer os testes propriamente ditos
+// O Moq permite criar objetos simulados (mock) para simular o comportamento de dependências externas, como bancos de dados ou serviços externos.
+// Deixo de precisar de criar instances ou abstracts para testar em isolamento. O Moq cria-as por mim, baseado nos modelos que estou a usar
