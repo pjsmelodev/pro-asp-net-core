@@ -1,4 +1,5 @@
 ﻿@model IQueryable<Product>
+@* o data model das razor views é sempre nullable, daí o uso do null-coalescing operator *@
 @foreach (var p in Model ?? Enumerable.Empty<Product>())
 {
     <div>
