@@ -30,7 +30,7 @@ namespace SportsStore.Tests
             //        as IEnumerable<Product>;
 
             ProductsListViewModel result =
-                controller.Index()?.ViewData.Model as ProductsListViewModel
+                controller.Index(null)?.ViewData.Model as ProductsListViewModel
                         ?? new();
 
             // Assert
@@ -67,7 +67,7 @@ namespace SportsStore.Tests
             //            ?? Enumerable.Empty<Product>();
 
             ProductsListViewModel result =
-                controller.Index(2)?.ViewData.Model as ProductsListViewModel
+                controller.Index(null, 2)?.ViewData.Model as ProductsListViewModel
                     ?? new();
 
             // Assert
@@ -98,7 +98,7 @@ namespace SportsStore.Tests
 
             // Act
             ProductsListViewModel result =
-                controller.Index(2)?.ViewData.Model as ProductsListViewModel
+                controller.Index(null, 2)?.ViewData.Model as ProductsListViewModel
                     ?? new();
 
             // Assert
