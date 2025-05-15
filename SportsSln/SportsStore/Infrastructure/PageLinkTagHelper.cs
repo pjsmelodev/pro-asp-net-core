@@ -8,6 +8,7 @@ using System.Xml;
 
 namespace SportsStore.Infrastructure
 {
+
     [HtmlTargetElement("div", Attributes = "page-model")]
     public class PageLinkTagHelper : TagHelper
     {
@@ -16,11 +17,18 @@ namespace SportsStore.Infrastructure
         {
             urlHelperFactory = helperFactory;
         }
+        
         [ViewContext]
         [HtmlAttributeNotBound]
         public ViewContext? ViewContext { get; set; }
         public PagingInfo? PageModel { get; set; }
         public string? PageAction { get; set; }
+
+        public bool PageClassesEnabled { get; set; } = false;
+        public string PageClass { get; set; } = String.Empty;
+        public string PageClassNormal { get; set; } = String.Empty;
+        public string PageClassSelected { get; set; } = String.Empty;
+
         public override void Process(TagHelperContext context,
         TagHelperOutput output)
         {
