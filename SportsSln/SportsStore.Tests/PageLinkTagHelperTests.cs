@@ -12,7 +12,7 @@ using Xunit;
 
 namespace SportsStore.Tests
 {
-    internal class PageLinkTagHelperTests
+    public class PageLinkTagHelperTests
     {
         [Fact]
         public void Can_Generate_Page_Links()
