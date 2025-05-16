@@ -39,3 +39,5 @@ namespace SportsStore.Tests
         }
     }
 }
+// "I created a mock repository implementation that contains repeating categories and categories that are
+// not in order. I assert that the duplicates are removed and that alphabetical ordering is imposed."
